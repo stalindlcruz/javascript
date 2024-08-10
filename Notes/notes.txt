@@ -1,0 +1,239 @@
+JavaScript es un lenguaje débilmente tipado y dinámico. Las variables en JavaScript no están asociadas directamente con ningún tipo de valor en particular, y a cualquier variable se le puede asignar (y reasignar) valores de todos los tipos.
+
+Los lenguajes tipados son los que exigen que se declare el tipo de dato en las variables, estructura de datos o funciones. Si no lo haces, error. Mientras que en los lenguajes no tipados no se necesita declarar el tipo de dato, sino que el intérprete (o el compilador) lo deduce.
+
+Todos los lenguajes de programación tienen estructuras de datos integradas, pero estas a 	menudo difieren de un lenguaje a otro.
+
+En JavaScript, un tipo de dato define qué tipo de valor puede contener una variable. Cada tipo de dato tiene sus propias características y usos.
+
+Tipos de Datos
+--------------
+
+1. Number:
+	Representa numeros enteros.
+	
+	let edad = 30;       // Número entero
+
+
+2. Float:
+	Representa números reales con decimales.
+
+	let temperatura = 21.5; // Número de punto flotante
+
+
+3. String:
+	Representa una cadena de caracteres (texto).
+
+	let nombre = "Juan";    // Usando comillas dobles
+	let saludo = 'Hola';    // Usando comillas simples
+
+
+4. Boolean:
+	Representa un valor verdadero o falso.
+
+	let esMayorDeEdad = true;
+	let tienePermiso = false;
+
+
+5. Undefined:
+	Representa una variable que ha sido declarada, pero no asignada a un valor.
+
+	let x;	// x es undefined
+
+
+6. Null:
+	Representa la ausencia intencional de cualquier valor de objeto.
+
+	let y = null;	// y es null
+
+
+7. Symbol:
+	Representa un valor único y no puede ser duplicado. Se utiliza para crear
+	identificadores únicos.
+
+	let id = Symbol("id");
+
+
+8. BigInt:
+	Representa enteros de tamaño arbitrariamente grande, más allá de las limitaciones del
+	tipo Number.
+
+	let numeroGrande = 1234567890123456789012345678901234567890n; // Usando 'n' al final
+
+
+9. Object:
+	Representa una colección de propiedades y métodos. Es un tipo de dato complejo.
+
+	let persona = {
+  	  nombre: "Ana",
+  	  edad: 25,
+  	  saludar: function() {
+    	     console.log("Hola, soy " + this.nombre);
+  	   }
+	 };
+
+
+10. Array:
+	Un tipo especial de objeto para almacenar listas ordenadas.
+
+	let frutas = ["manzana", "banana", "pera"];
+
+
+11. Function:
+	Un bloque de código diseñado para realizar una tarea específica. También es un tipo de
+	objeto.
+
+	function sumar(a, b) {
+	  return a + b;
+	}
+
+
+JavaScript Scope
+----------------
+
+El scope (o ámbito) en JavaScript se refiere al contexto en el que las variables y funciones son accesibles. Define el lugar desde donde se puede acceder a las variables y funciones dentro del código.
+
+Hay varios tipos de scope en JavaScript:
+
+1. Global Scope:
+		Las variables declaradas fuera de cualquier función o bloque tienen un alcance
+		global. Esto significa que se pueden acceder desde cualquier parte del código.
+
+		var globalVariable = "I'm global";
+
+		function showVariable() {
+  		  console.log(globalVariable); // Acceso a la variable global
+		}
+
+		showVariable(); // Imprime "I'm global"
+
+2. Function Scope:
+		Las variables declaradas dentro de una función tienen un alcance de función.
+		Solo se pueden acceder desde dentro de esa función.
+
+		function myFunction() {
+  			var functionVariable = "I'm local to the function";
+  			console.log(functionVariable); // Accesible dentro de la función
+		}
+
+		myFunction();
+		console.log(functionVariable); // Error: functionVariable no está definida
+
+3. Block Scope:
+	Las variables declaradas con let o const dentro de un bloque ({}) tienen un alcance de
+	bloque. Solo se pueden acceder desde dentro de ese bloque.
+
+	if (true) {
+  	  let blockVariable = "I'm local to the block";
+  	  console.log(blockVariable); // Accesible dentro del bloque
+	}
+
+	console.log(blockVariable); // Error: blockVariable no está definida
+
+4. Lexical Scope:
+		JavaScript utiliza el alcance léxico, lo que significa que el scope de una
+		variable se determina por la ubicación de las funciones y bloques en el código
+		en el momento de su definición, no en el momento de su ejecución.
+
+		function outerFunction() {
+  		  var outerVariable = "I'm from the outer function";
+
+  		  function innerFunction() {
+    		    console.log(outerVariable); // Accede a la variable del alcance externo
+  		  }
+
+  		   innerFunction();
+		}
+
+		outerFunction(); // Imprime "I'm from the outer function"
+
+En resumen, el scope en JavaScript determina dónde se pueden usar variables y funciones dentro del código, y puede ser global, de función o de bloque.
+
+
+
+Diferencias entre var y let
+---------------------------
+
+En JavaScript, las palabras clave var y let se utilizan para declarar variables, pero tienen diferencias importantes en cuanto a su alcance y comportamiento.
+
+Principales diferencias:
+
+1. Alcance (Scope):
+
+	• var --> Tiene alcance de función. Esto significa que una variable declarada con var
+	está disponible en toda la función en la que se declara, independientemente del bloque
+	en el que se encuentre. Si se declara una variable con var fuera de cualquier función,
+	entonces es global.
+
+function ejemploVar() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10
+}
+
+	• let --> Tiene alcance de bloque. Esto significa que una variable declarada con let
+	solo está disponible dentro del bloque de código en el que se declara (por ejemplo,
+	dentro de un par de llaves {}).
+
+function ejemploLet() {
+  if (true) {
+    let y = 10;
+  }
+  console.log(y); // Error: y is not defined
+}
+
+
+2. Re-declaracion:
+
+	• var --> Permite re-declarar la misma variable dentro del mismo ámbito sin arrojar un
+	error.
+
+var a = 1;
+var a = 2; // No hay error
+
+	• let --> No permite re-declarar una variable en el mismo ámbito. Intentar hacerlo
+	arrojará un error.
+
+let b = 1;
+let b = 2; // Error: Identifier 'b' has already been declared
+
+
+3. Hoisting (Elevacion):
+
+		• var --> Las variables declaradas con var son elevadas al inicio de su ámbito
+		(función o global), pero su valor se inicializa como undefined hasta que la
+		declaración es evaluada.
+
+console.log(c); // undefined
+var c = 5;
+
+		• let --> Las variables declaradas con let también son elevadas al inicio del
+		bloque, pero no están inicializadas hasta que se ejecuta la línea de código
+		donde están declaradas. Intentar acceder a la variable antes de su declaración
+		da un error de referencia (ReferenceError).
+
+console.log(d); // Error: Cannot access 'd' before initialization
+let d = 5;
+
+
+4. Variable Global:
+
+		• var --> Si declaras una variable con var fuera de cualquier función, esta se
+		convierte en una propiedad del objeto global (en un navegador, esto es window).
+
+var e = 10;
+console.log(window.e); // 10
+
+		• let --> No crea una propiedad en el objeto global, incluso si se declara fuera 		de cualquier función.
+
+let f = 10;
+console.log(window.f); // undefined
+
+
+Conclusión
+----------
+
+Usa let para tener un control más preciso sobre el alcance de tus variables y evitar posibles errores de lógica.
+
+var es una declaración más antigua y se utiliza menos en el código moderno debido a sus peculiaridades, como el hoisting y el alcance de función.
