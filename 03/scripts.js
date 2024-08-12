@@ -24,7 +24,7 @@
 // function getFruistList(position) {
 //     if (position == 0) {
 //         return fruistList[position];
-//     }
+//     }\
 // }
 
 // let result = getFruistList(0)
@@ -58,3 +58,4 @@
 // btnI.addEventListener('click', printEnvent)
 
 // btnI.addEventListener('mouseenter', printEnvent)
+//
