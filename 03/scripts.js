@@ -59,3 +59,134 @@
 
 // btnI.addEventListener('mouseenter', printEnvent)
 //
+
+
+
+
+
+
+// function a () {
+//     console.log('ms');
+//     return 'cadena';
+// }
+
+// function b () {
+//     a();
+// }
+
+// function sumar (n1, n2) {
+//     return n1 + n2;
+// }
+
+// let result = sumar(2,4);
+// console.log(result);
+
+// let sumar = (n1, n2) => {
+    //
+    //
+    //
+//     return n1 + n2;
+// }
+
+// let result = sumar(3,6);
+
+// console.log(result);
+
+// let sumar = (n1,n2) => n1 + n2; 
+
+// let result = sumar(20, 4)
+// console.log(result);
+
+// let imprimirLosNombreDistintosaEngels = (nombre) => {
+
+//     if (nombre !== 'engels') {
+//         console.log(nombre);
+//     } 
+
+//     return;
+    
+// }
+
+
+// indentificarAEngels('engels')
+
+// let myFunction = (p1,p2,p3,p4) => {
+
+// }
+
+//Aritmetcs and Logics
+
+// ==
+// !=
+// &&
+// ||
+// === -> evalua el valor y el tipo
+// !== -> evalua el valor y el tipo pero para la negacion
+
+// let number = 2;
+
+// if (number !== '2') {
+//     console.log('Yes, are not equals');
+// } else {
+//     console.log('Not, are equals!');
+// }
+
+// if () {
+
+// } else {
+
+// } else if () {
+
+// }
+
+// let fruit = 'banana';
+
+
+// switch (fruit) {
+//     case 'orange':
+//         console.log('orange');
+//     break;
+
+//     case 'banana':
+//         console.log('banana');
+//     break;
+        // default:
+        // console.log('default');
+        // break;
+// }
+
+// let fruits = ['orange', 'banana']
+
+// switch (fruits[1]) {
+//     case 'orange':
+//         console.log('orange');
+//     break;
+
+//     case 'banana':
+//         console.log('banana');
+//     break;
+// }
+
+
+// let frtL = document.querySelector('#frtL');
+
+// frtL.addEventListener('change', ()=>{
+//     switch (frtL.value) {
+//         case 'orange' :
+//             console.log('Este es el valor de', frtL.value);
+//         break;
+        
+//         case 'banana': 
+//             console.log('Este es el valor de', frtL.value);
+//         break;
+
+//         case 'apple': 
+//             console.log('Este es el valor de', frtL.value);
+//         break;
+
+//         default:
+//             console.log('default');
+//         break
+            
+//     }
+// })
