@@ -85,6 +85,34 @@
 
 
 
-let btn1 = document.querySelector('#btn');
+// function a () {
+//     console.log('ms');
+//     return 'Cadena';
+// }
 
-let printMessage = () => console.log('Hola');
+
+// function sumar (n1, n2) {
+//     return n1 + n2
+// }
+
+// let result = sumar(10, 22);
+
+// console.log(result);
+
+
+
+// let multiplicar = (n1, n2) => {
+//     return n1 * n2;
+// }
+
+// let result = multiplicar(10, 2);
+
+// console.log(result);
+
+
+
+// let dividir = (n1, n2) => n1 / n2;
+
+// let result = dividir(8, 4);
+
+// console.log(result);
