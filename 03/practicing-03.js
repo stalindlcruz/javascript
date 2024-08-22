@@ -116,3 +116,87 @@
 // let result = dividir(8, 4);
 
 // console.log(result);
+
+
+
+// let printDiferentNameToEngels = (nombre) => {
+
+//     if (nombre !== 'Engels') {
+//         console.log(nombre);
+//     }
+
+//     return;
+// }
+
+// let identificationName = printDiferentNameToEngels('Engels');
+
+// console.log(identificationName);
+
+
+
+// let number = 2;
+
+// if (number !== '2') {
+//     console.log('Yes, is not equal');
+// } else {
+//     console.log('Not, are equal');   
+// }
+
+
+
+// let fruit = 'banana';
+
+// switch (fruit) {
+//     case 'orange':
+//         console.log('orange');
+//         break;
+
+//     case 'banana':
+//         console.log('banana');
+//         break;
+
+//     default:
+//         console.log('default');
+//         break;
+// }
+
+
+
+// let fruits = ['orange', 'banana'];
+
+// switch (fruits[1]) {
+//     case 'orange':
+//         console.log('orange');
+//         break;
+
+//     case 'banana':
+//         console.log('banana');
+//         break;
+
+//     default:
+//         console.log('default');
+//         break;
+// }
+
+
+// let frtL = document.querySelector('#frtL');
+
+// frtL.addEventListener('change', ()=>{
+//     switch (frtL.value) {
+//         case 'apple':
+//             console.log('Este es el valor de', frtL.value);
+//             break;
+
+//         case 'kiwi':
+//             console.log('Este es el valor de', frtL.value);
+//             break;
+
+//         case 'peach':
+//             console.log('Este es el valor de', frtL.value);
+//             break;
+    
+//         default:
+//             console.log('default');
+//             break;
+//     }
+// })
