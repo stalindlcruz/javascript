@@ -200,3 +200,46 @@
 //             break;
 //     }
 // })
+
+
+
+
+// let answers = ['Home', 'Working']
+// let question = 'Where are you?';
+
+// answers.forEach (answers => {
+//     switch (answers) {
+//         case 'Home':
+//             console.log('Call me');
+//             break;
+
+//         case 'Working':
+//             console.log('Im working');
+//             break;
+    
+//         default:
+//             console.log(question);
+//             break;
+//     }
+// })
+
+
+
+let lookingForEngels = (answer) => {
+
+    switch (answer) {
+        case 'home':
+            console.log('call me');
+            break;
+
+        case 'working':
+            console.log('Im working');
+            break;
+    
+        default:
+            console.log('where are you');
+            break;
+    }
+}
+
+lookingForEngels();
