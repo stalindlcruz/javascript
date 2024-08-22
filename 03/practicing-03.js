@@ -225,21 +225,21 @@
 
 
 
-let lookingForEngels = (answer) => {
+// let lookingForEngels = (answer) => {
 
-    switch (answer) {
-        case 'home':
-            console.log('call me');
-            break;
+//     switch (answer) {
+//         case 'home':
+//             console.log('call me');
+//             break;
 
-        case 'working':
-            console.log('Im working');
-            break;
+//         case 'working':
+//             console.log('Im working');
+//             break;
     
-        default:
-            console.log('where are you');
-            break;
-    }
-}
+//         default:
+//             console.log('where are you');
+//             break;
+//     }
+// }
 
-lookingForEngels();
+// lookingForEngels();
