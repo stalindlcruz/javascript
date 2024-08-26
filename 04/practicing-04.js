@@ -34,3 +34,20 @@ do {
 /* for (let count = 0; count < 2; count++) {
     console.log(carList[count]);
 } */
+
+
+
+// ---------------------------------------------------
+
+/* let select = document.querySelector('#carList');
+
+for (let count = 0; count < carList.length; count++) {
+    let options = document.createElement('option');
+    options.text = carList[count];
+    select.appendChild(options);
+} */
+
+
+
+// ---------------------------------------------------
+
