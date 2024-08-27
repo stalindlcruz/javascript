@@ -75,11 +75,3 @@ let list = ['Aurora', 'Sirvia', 'Masiel', 'Dayana', 'Dahina', 'Florangel'];
 
 // 02 - Practicar todo lo visto en esta clase y pasar los cambios de este branch al principal
 
-
-
-
-
-
-
-
-
