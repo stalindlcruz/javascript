@@ -237,3 +237,12 @@ Conclusión
 Usa let para tener un control más preciso sobre el alcance de tus variables y evitar posibles errores de lógica.
 
 var es una declaración más antigua y se utiliza menos en el código moderno debido a sus peculiaridades, como el hoisting y el alcance de función.
+
+-----------------------------------------------------------------------------------------------
+
+
+
+Un Callback
+------------
+
+Es una función que le puedes pasar a otra como argumento.
