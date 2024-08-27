@@ -51,3 +51,18 @@ for (let count = 0; count < carList.length; count++) {
 
 // ---------------------------------------------------
 
+let birthDay = (stalin, engels) => {
+    stalin();
+    engels();
+  };
+  
+  const stalinBirthDay = () => {
+    console.log('Stalin Birthday is in September')
+  };
+  
+  const engelsBirthDay = () => {
+    console.log('Engels Birthday is in Octuber')
+  };
+  
+  
+  birthDay(stalinBirthDay, engelsBirthDay);
