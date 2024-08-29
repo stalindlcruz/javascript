@@ -51,7 +51,7 @@ for (let count = 0; count < carList.length; count++) {
 
 // ---------------------------------------------------
 
-let birthDay = (stalin, engels) => {
+/* let birthDay = (stalin, engels) => {
     stalin();
     engels();
   };
@@ -65,4 +65,4 @@ let birthDay = (stalin, engels) => {
   };
   
   
-  birthDay(stalinBirthDay, engelsBirthDay);
+  birthDay(stalinBirthDay, engelsBirthDay); */
