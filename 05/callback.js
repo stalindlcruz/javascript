@@ -75,4 +75,58 @@ const veryDificult = () => {
 learnigCallback(veryDificult); */
 
 
+
+
+
 /* Funciones que reciben parametros en los callback. */
+
+
+/* let playingBaseball = (firstBaseman, shortStop) => {
+    console.log('Las posiciones First Baseman y Short Stop, estaran ocupadas por Engels y Stalin')
+    firstBaseman('Engels esta jugando la primera base')
+    shortStop('Stalin esta jugando en el short stop')
+}
+
+let firstBaseman = (engels) => {
+    console.log(engels);
+}
+
+let shortStop = (stalin) => {
+    console.log(stalin);
+}
+
+playingBaseball(firstBaseman, shortStop); */
+
+
+
+/* let cleaningHouse = (kitchen, bathroom) => {
+    kitchen('La cocina esta siendo limpianda por Florangel');
+    bathroom('The bathroom esta siendo limpiado por Engels');
+}
+
+const florangel = (floraTodo) => {
+    console.log(floraTodo);
+}
+
+const engels = (engelsTodo) => {
+    console.log(engelsTodo);
+}
+
+cleaningHouse(florangel, engels) */
+
+
+
+/* let LookingBarbershop = (location) => {
+    let value = location('This is the Best BarberShop');
+    console.log(value);    
+}
+
+const theLoisBarberShop = (msj) => {
+    console.log(msj);
+    return 'Welcome to The Lois BarberShop'
+}
+
+LookingBarbershop(theLoisBarberShop) */
+
+
+
