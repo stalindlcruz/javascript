@@ -56,7 +56,7 @@ choosingPhone(galaxy); */
 
 
 
-let learnigCallback = (decisions) => {
+/* let learnigCallback = (decisions) => {
     let decision = decisions();
     console.log(decision);
     
@@ -72,7 +72,7 @@ const veryDificult = () => {
     return 'Very Dificult'
 }
 
-learnigCallback(veryDificult)
+learnigCallback(veryDificult); */
 
 
 /* Funciones que reciben parametros en los callback. */
