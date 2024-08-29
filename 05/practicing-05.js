@@ -35,3 +35,56 @@ let shortStop = (stalin) => {
 }
 
 playingBaseball(firstBaseman, shortStop); */
+
+
+
+/* ----------------------------------------------------------------------------- */
+
+/* const carList = [
+    {
+        tesla: 'Model X',
+        honda: 'CRV 2024',
+        toyota: 'Highlander 2024',
+    },
+    true,
+    'Hola!',
+]
+
+let carSelections  = () => {
+    return carList
+}
+
+let selection = carSelections();
+console.log(selection[0].tesla); */
+
+
+
+/* // let fecha = Date();
+// let fecha = new Date('2024/10/20');
+let currentDate = new Date();
+
+console.log(currentDate.getMinutes()); */
+
+
+
+/* --------------------------------------------------------------------- */
+
+
+/* const myList = [
+    'Im a string',
+    90,
+    true,
+    false,
+    [],
+    {},
+    () => {
+        return 'Hola'
+    }
+]
+
+console.log(myList[6]()); */
+
+
+
+/* --------------------------------------------------------------- */
+

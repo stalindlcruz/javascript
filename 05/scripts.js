@@ -29,9 +29,10 @@
 // let fecha = new Date() //Si no pasas una fecha trabajaras con la fecha actual
 // console.log(fecha.getMonth()+1);
 //////////////////////////////
+
 // let list = ['esto es una cadena', 6, true, [], {}, function(){return 'ya no estoy vacio'}]
 
-// console.log(list[5]);
+// console.log(list[5]());
 
 //////////////////////////////
 
