@@ -126,52 +126,115 @@
 /* Funciones que reciben parametros en los callback. */
 
 
-/* let playingBaseball = (firstBaseman, shortStop) => {
-    console.log('Las posiciones First Baseman y Short Stop, estaran ocupadas por Engels y Stalin')
-    firstBaseman('Engels esta jugando la primera base')
-    shortStop('Stalin esta jugando en el short stop')
-}
+// let playingBaseball = (firstBaseman, shortStop) => {
+//     console.log('Las posiciones First Baseman y Short Stop, estaran ocupadas por Engels y Stalin');
+//     firstBaseman('Engels esta jugando la primera base');
+//     shortStop('Stalin esta jugando en el short stop');
+// }
 
-let firstBaseman = (engels) => {
-    console.log(engels);
-}
+// let firstBaseman = (engels) => {
+//     console.log(engels);
+// }
 
-let shortStop = (stalin) => {
-    console.log(stalin);
-}
+// let shortStop = (stalin) => {
+//     console.log(stalin);
+// }
 
-playingBaseball(firstBaseman, shortStop); */
-
-
-
-/* let cleaningHouse = (kitchen, bathroom) => {
-    kitchen('La cocina esta siendo limpianda por Florangel');
-    bathroom('The bathroom esta siendo limpiado por Engels');
-}
-
-const florangel = (floraTodo) => {
-    console.log(floraTodo);
-}
-
-const engels = (engelsTodo) => {
-    console.log(engelsTodo);
-}
-
-cleaningHouse(florangel, engels) */
+// playingBaseball(firstBaseman, shortStop);
 
 
 
-/* let LookingBarbershop = (location) => {
-    let value = location('This is the Best BarberShop');
-    console.log(value);    
-}
+// let cleaningHouse = (kitchen, bathroom) => {
+//     kitchen('La cocina esta siendo limpianda por Florangel');
+//     bathroom('The bathroom esta siendo limpiado por Engels');
+// }
 
-const theLoisBarberShop = (msj) => {
-    console.log(msj);
-    return 'Welcome to The Lois BarberShop'
-}
+// const florangel = (floraTodo) => {
+//     console.log(floraTodo);
+// }
 
-LookingBarbershop(theLoisBarberShop) */
+// const engels = (engelsTodo) => {
+//     console.log(engelsTodo);
+// }
+
+// cleaningHouse(florangel, engels)
 
 
 
+// let LookingBarbershop = (location) => {
+//     let value = location('Welcome to The Lois BarberShop');
+//     console.log(value);    
+// }
+
+// const theLoisBarberShop = (msj) => {
+//     console.log(msj);
+//     return 'This is the best BarberShop'
+// }
+
+// LookingBarbershop(theLoisBarberShop)
+
+
+
+// let printResume = (develop) => {
+//     console.log('Printinig the resume to be a developer');
+//     develop('This is the resume to frotend developer');
+// }
+
+// printResume( (resume) => { console.log(resume); });
+
+
+
+// let printResume = (develop) => {
+//     console.log('Printinig the resume to be a developer');
+//     let result = develop('This is the resume to frotend developer');
+//     console.log(result);
+// }
+
+// printResume( (resume) => { return resume });
+
+
+
+// let eating = (lunch, dinner) => {
+//     lunch('Im eating my lunch');
+//     dinner('Im eating my dinner');
+// }
+
+// eating( (havingLunch) => { console.log(havingLunch); }, (havingDinenr) => { console.log(havingDinenr); } );
+
+
+
+// let eating = (lunch, dinner) => {
+//     let firstFood = lunch('Im eating my lunch');
+//     let secondFood = dinner('Im eating my dinner');
+//     console.log(firstFood + '\n' + secondFood);
+// }
+
+// eating( (havingLunch) => { return havingLunch }, (havingDinenr) => { return havingDinenr } );
+
+
+
+// let washingClothes = (white) => {
+//     let whiteClothe = white('Im washing the white clothes first!');
+//     console.log(whiteClothe);
+// }
+
+// washingClothes( (washing) => { return washing} );
+
+
+
+// let buyingWater = (water) => {
+//     let polandSpring = water('This is the best water option');
+//     console.log(polandSpring);
+// }
+
+// buyingWater( (msj) => { return msj} );
+
+
+
+// let dancing = (bachata, salsa) => {
+//     danceBachata = bachata('I am dancing bachata...');
+//     danceSalsa = salsa('I am dancing salsa...')
+//     console.log(danceBachata + '\n' + danceSalsa);
+// }
+
+// dancing( (dance) => { return dance}, (dance) => { return dance});
