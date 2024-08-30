@@ -88,3 +88,24 @@ console.log(myList[6]()); */
 
 /* --------------------------------------------------------------- */
 
+let personalList = ['Laptop', 'Monitor', 'Phone', 'Mouse', 'Keyboard'];
+
+// personalList.forEach((position) => console.log(position));
+
+
+// let returnValue = personalList.find((position) => position == 'Phone');
+// console.log(returnValue);
+
+
+// let returnValue = personalList.filter((position) => position == 'Phone');
+// console.log(returnValue);
+
+// let returnValue = personalList.filter((position) => position == 'Phone' || position == 'Monitor');
+// console.log(returnValue);
+
+// let newList = ['Phone', 'Monitor'];
+// let returnValue = personalList.filter((position) => newList.includes(position));
+// console.log(returnValue);
+
+// let exist = personalList.includes('Monitor', 1);
+// console.log(exist);
