@@ -1,78 +1,108 @@
-// Funciones que no reciben parametros en los callback.
+/* Funciones que no reciben parametros en los callback. */
 
 
-/* let listeningMusic = (tys) => {
-    tys();
-}
+// let listeningMusic = (tys) => {
+//     tys();
+// }
 
-const tysSong = () => {
-    console.log('Estoy escuchando a TYS');
-}
+// const tysSong = () => {
+//     console.log('Estoy escuchando a TYS');
+// }
 
-listeningMusic(tysSong); */
-
-
-
-/* let watchingTv = (watching) => {
-    let movie = watching();
-    console.log(movie);
-}
-
-const fastFurios = () => {
-    return 'Im watching the movie Fast and Furios'
-}
-
-watchingTv(fastFurios); */
+// listeningMusic(tysSong);
 
 
 
-/* let lookingWater = (found) => {
-    let isFound = found();
-    console.log(isFound);
-}
+// let watchingTv = (watching) => {
+//     let movie = watching();
+//     console.log(movie);
+// }
 
-const waterFound = () => {
-    console.log('El agua fue encontrada');
-    return 'Buenas noticias...!!'
-}
+// const fastFurios = () => {
+//     return 'Im watching the movie Fast and Furios'
+// }
+
+// watchingTv(fastFurios);
+
+
+
+// let lookingWater = (found) => {
+//     let isFound = found();
+//     console.log(isFound);
+// }
+
+// const waterFound = () => {
+//     console.log('El agua fue encontrada');
+//     return 'Buenas noticias...!!'
+// }
     
-lookingWater(waterFound); */
+// lookingWater(waterFound);
 
 
 
-/* let choosingPhone = (option) => {
-    option();
-}
+// let choosingPhone = (option) => {
+//     option();
+// }
 
-const iphone = () => {
-    console.log('Iphone is the best option');
-}
+// const iphone = () => {
+//     console.log('Iphone is the best option');
+// }
 
-const galaxy = () => {
-    console.log('Galaxy is a good option');
-}
+// const galaxy = () => {
+//     console.log('Galaxy is a good option');
+// }
 
-choosingPhone(galaxy); */
+// choosingPhone(galaxy);
 
 
 
-/* let learnigCallback = (decisions) => {
-    let decision = decisions();
-    console.log(decision);
+// let learnigCallback = (decisions) => {
+//     let decision = decisions();
+//     console.log(decision);
     
-}
+// }
 
-const dificult = () => {
-    console.log('Es bien dificil aprender callback');
-    return 'No me gustan los callback'
-}
+// const dificult = () => {
+//     console.log('Es bien dificil aprender callback');
+//     return 'No me gustan los callback'
+// }
 
-const veryDificult = () => {
-    console.log('Super dificil los callback');
-    return 'Very Dificult'
-}
+// const veryDificult = () => {
+//     console.log('Super dificil los callback');
+//     return 'Very Dificult'
+// }
 
-learnigCallback(veryDificult); */
+// learnigCallback(veryDificult);
+
+
+
+// function suma (sumando) {
+//     console.log(sumando());
+// }
+
+// suma( () => {return 2 + 4} );
+
+
+
+// function saludo(saludar) {
+//     saludar();
+// }
+
+// saludo(()=> {console.log('Hello! Good morning...')});
+
+
+
+// function walking(walk) {
+//     walk();
+// }
+
+// walking( () => {
+//     console.log('Im walking to my home');
+// } );
+
+
+
+
 
 
 
