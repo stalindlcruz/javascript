@@ -102,6 +102,21 @@
 
 
 
+// let playingBasket = (mvpPlayer) => {
+//     let player = mvpPlayer();
+//     console.log(player);
+    
+// }
+
+// playingBasket( () => { return 'Steph Curry'} );
+
+
+
+// let writingCode = (write) => {
+//     write();
+// }
+
+// writingCode( () => { console.log('Im writing my first code in JavaScript'); } );
 
 
 
