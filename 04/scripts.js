@@ -44,7 +44,7 @@
 ////////////////////
 
 // let print = (funct) => {
-//     let r = funct()
+//     let r = funct();
 //     console.log(r);
 //     console.log(funct);
 // }

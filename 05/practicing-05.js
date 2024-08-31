@@ -88,7 +88,7 @@ console.log(myList[6]()); */
 
 /* --------------------------------------------------------------- */
 
-let personalList = ['Laptop', 'Monitor', 'Phone', 'Mouse', 'Keyboard'];
+// let personalList = ['Laptop', 'Monitor', 'Phone', 'Mouse', 'Keyboard'];
 
 // personalList.forEach((position) => console.log(position));
 
@@ -109,3 +109,19 @@ let personalList = ['Laptop', 'Monitor', 'Phone', 'Mouse', 'Keyboard'];
 
 // let exist = personalList.includes('Monitor', 1);
 // console.log(exist);
+
+
+/* ----------------------------------------------------------------- */
+
+
+// console.log(personalList.join('-'));
+// personalList.push('SSD');
+// console.log(personalList);
+// console.log(personalList.push('SSD')); //Devuelve la nueva longitud del arreglo
+// personalList.pop();
+// personalList.shift();
+// personalList = personalList.filter( (position) => position !== 'SSD' );
+
+
+
+// console.log(personalList);
