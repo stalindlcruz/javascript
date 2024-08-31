@@ -76,7 +76,7 @@
 //  print(play, false)
 
 // let myForEach = (callback)=>{
-//     for(let i= 0; i < fruits.length; i++){
+//     for ( let i= 0; i < fruits.length; i++ ) {
 //         let r = callback(fruits[i])
 //         console.log(r);
 //     }
