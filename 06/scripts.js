@@ -6,9 +6,12 @@
 
 // new Array()
 // let lista = []
+
 // Los dos ejemplo de arriba son lo mismo
 // Una cosa es crear un objeto de un tipo y otra es acceder a un objeto x ej: new Date().getDay() || Date.parse()
+
 //////////////////////////////////
+
 // let result = cadena.concat('Stalin ', 'De la Cruz')
 // console.log(result);
 
