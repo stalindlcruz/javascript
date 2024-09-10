@@ -1,5 +1,5 @@
 // let cadena = new String();
-// let cade = '' 
+// let cade = ''
 
 // new Boolean()
 // let bol = true
