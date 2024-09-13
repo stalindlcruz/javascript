@@ -136,3 +136,151 @@ console.log(fullName); */
 // const textValue = texto.indexOf('JavaScript'); ---> Devuelve la posición de la primera aparición de una subcadena.
 
 // console.log(textValue);
+
+
+
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* BOM */
+
+
+/* localStorage */
+
+/* Guardar datos en el localStorage */
+// localStorage.setItem('user1', 'engels');
+// localStorage.setItem('user2', 'stalin');
+// localStorage.setItem('user3', 'ismael');
+// localStorage.setItem('user4', '');
+
+
+
+/* Eliminar dato de localStorage */
+// localStorage.removeItem('user4')
+// localStorage.removeItem('hola')
+// localStorage.clear() ---> Elimina todos los datos
+
+/* Recorrer todas las claves del Local Storage */
+// for (let i = 0; i < localStorage.length; i++) {
+        /* Obtener la clave por índice */
+//     const key = localStorage.key(i);
+
+        /* Obtener el valor asociado a la clave */
+//     const value = localStorage.getItem(key);
+
+        /* Verificar si el valor está vacío */
+//     if (value === '' || value === null || value === undefined) {
+            /* Eliminar la clave si el valor está vacío */
+//         localStorage.removeItem(key);
+            /* Reducir el índice para ajustar la longitud al eliminar un elemento */
+//         i--;
+//     }
+    
+// }
+
+
+
+/* sessionStorage */
+
+// Guardar datos en el sessionStorage
+// sessionStorage.setItem('dato1', 'valor1')
+// sessionStorage.setItem('dato2', 'valor2')
+// sessionStorage.setItem('dato3', 'valor3')
+// sessionStorage.setItem('dato4', 'valor4')
+
+// Recuperar el dato del Session Storage
+// let userRecovered = sessionStorage.getItem('dato1');
+
+// if (userRecovered !== null || userRecovered !== '') {
+//     console.log('Dato recuperado de sessionStorage: ', userRecovered);
+// } else {
+//     console.log('No se puedo encontrar en dato!');
+    
+// }
+
+// Eliminar dato de sessionStorage
+// sessionStorage.removeItem('dato4')
+
+
+
+/* imprimir la pantalla */
+
+// const printPage = () => {
+//     window.print();
+// };
+
+// let btn2 = document.querySelector('#btn2');
+
+// btn2.addEventListener('click', printPage);
+
+
+
+
+
+/* Mostrar el tamano de la pantalla */
+
+
+// const testDiv = document.querySelector('#testDiv');
+// const newTexto = document.createElement('p');
+// const newTexto1 = document.createElement('p');
+// testDiv.appendChild(newTexto);
+// testDiv.appendChild(newTexto1);
+
+// const updateWindowSize = () => {
+//     newTexto.innerHTML = 'El width de tu pantalla es el siguiente: ' + window.innerWidth + 'px';
+//     newTexto1.innerHTML = 'El height de tu pantalla es el siguiente: ' + window.innerHeight + 'px';
+// };
+
+// updateWindowSize();
+
+// window.addEventListener('resize', updateWindowSize);
+
+
+
+
+/* Close the window */
+
+// const closeWindow = document.querySelector('#btnClose');
+// closeWindow.addEventListener('click', () => { window.close });
+
+
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+/* primitivo --> pase por valor. */
+
+// let userName = 'Dahiana';
+// let name = userName;
+
+// name = 'Florangel';
+
+// console.log(userName);
+// console.log(name);
+
+
+
+/* objeto --> pase por referenciia. */
+
+// const obj1 = {
+//     name: 'Florangel',
+// };
+
+// const obj2 = obj1;
+// obj2.name = 'Dahiana';
+
+
+// console.log(obj1);
+// console.log(obj2);
+
+/* -------------------------------------------------------------------- */
+
+
+// const carsBrand = {
+//     Tesla: 'ModelX',
+// };
+
+// const cars = {...carsBrand};
+// cars.Tesla = 'ModelY';
+
+// console.log(carsBrand);
+// console.log(cars);

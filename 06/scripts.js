@@ -70,7 +70,11 @@
 // obj02.name = 'Engels'
 // console.log(obj01);
 // console.log(obj02)
+
+
 ////////////////////////////
+
+
 // De esta forma yo hago una copia con el ... spread operator
 // const obj01 = {
 //     name: 'Stalin'
@@ -81,7 +85,3 @@
 // obj02.name = 'Engels'
 // console.log(obj01);
 // console.log(obj02)
-
-
-
-
