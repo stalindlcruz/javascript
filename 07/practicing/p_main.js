@@ -76,5 +76,5 @@ let deco = document.cookie.split('=');
 let data = JSON.parse(deco[1])
 
 console.log(document.cookie);
-// console.log(deco);
-// console.log(data);
+console.log(deco);
+console.log(data);
