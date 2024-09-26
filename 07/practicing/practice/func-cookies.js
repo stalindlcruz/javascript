@@ -20,6 +20,6 @@ const deletingCookie = (name) => {
     document.cookie = `${name}=; expires=Mon, 10 Jan 1920 12:00:00 UTC; path=/`;
 }
 
-addingCookie('USER1', 'Dahiana Brens', 'Fri, 30 Sep 2024 12:00:00 UTC');
+addingCookie('USER1', 'Dahiana Brens', 'Fri, 28 Sep 2024 12:00:00 UTC');
 updatingCookie('USER2', 'Florangel Moya', 'Fri, 30 Sep 2024 12:00:00 UTC');
 deletingCookie('USER1');
