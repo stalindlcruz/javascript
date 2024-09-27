@@ -75,3 +75,17 @@
 // let msj='tal cosa "dfdfd" dfjkdjf'
 
 
+const test = new Date();
+test.setDate(test.getDate() + 1);
+console.log(test);
+
+// const currentDate = new Date();
+// currentDate.setDate(currentDate.getDate() + 1);
+// const tomorrowDate = currentDate.toUTCString();
+
+const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + days);
+    const expires = currentDate.toUTCString();
+
+console.log(expires);
+
