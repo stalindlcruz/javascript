@@ -19,6 +19,8 @@ const addingCookie = (user, name, days = 1) => {
 
     getCookies.forEach((cookie) => {
         const [existingUser, existingName] = cookie.trim().split('=');
+        // const existingUser = getCookies[0];
+        // const existingName = getCookies[1];
         if (existingUser === user || existingName === name) {
             cookieCreated = true
         }
