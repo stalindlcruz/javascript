@@ -108,7 +108,8 @@ const addingCookieResolved2 = (name, value, expirationDays = 1) => {
     }
   
     console.error("Ya existe una cookie como esta!");
-  };
+};
+
 // No debes eliminar algo para luego actualizarlo, debes filtrarlo para saber si existe y luego actulizarlo
 // Lo mismo que te dije arriba aplica para aca
 // Tambien debes evaluar que la cookie exista, porque no vas a actualizar algo que no existe, en su defecto se creara una nueva
