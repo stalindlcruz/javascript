@@ -55,3 +55,5 @@ btns.forEach((btn) => {
         }
     })
 })
+
+// AHora tienes hacer que la calculadora haga operaciones matematicas, suma, resta, mult, div

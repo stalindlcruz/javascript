@@ -51,6 +51,7 @@ body {
     transition: 0.1s;
 }
 
+/* debiste crear un clase para no repetir el codigo */
 #ac {
     grid-column: 1/3;
 }
