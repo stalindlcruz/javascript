@@ -13,6 +13,15 @@ btns.forEach((btn) => {
         const btnPressed = btn.textContent;
         const EMPTY = '0';
 
+        if (btn.id === 'equal') {
+          try {
+            screen.textContent = eval(screen.textContent);
+          } catch (error) {
+            screen.textContent = 'Error!'
+          }
+          return
+        }
+
         if (btn.id === 'ac') {
             screen.textContent = '0';
             return
