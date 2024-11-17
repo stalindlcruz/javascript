@@ -1,5 +1,3 @@
-// https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions
-
 // asincrono / sincrono https://community.listopro.com/programacion-sincrona-vs-asincrona/
 
 // function one() {
@@ -35,6 +33,8 @@
 //     }, 10)
 // })
 
+/* --------------------------------------------------------- */
+
 // let login = (user, pass) => {
 
 //     const userExist = verifyUser(user);
@@ -61,6 +61,8 @@
 // }
 
 // login('Stalin',123124)
+
+/* --------------------------------------------------------- */
 
 // function x(name) {
 //   return new Promise((resolve, reject) => {
@@ -103,6 +105,9 @@
 //         console.log('Finalizado!');
 //     })
 
+
+/* --------------------------------------------------------------- */
+
 // async and await 
 
 // async function x(name) {
@@ -123,3 +128,5 @@
 // }
 
 // y()
+
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions
