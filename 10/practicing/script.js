@@ -1,17 +1,17 @@
 function sumar(num1, num2, callback) {
-    const resultado = num1 + num2;
-    callback(num1, num2, resultado);
-    return resultado;
+    return callback(num1, num2);
 }
 
-const result = sumar(2, 4, (num1, num2, resultado) => {
+function sumOperation(num1, num2) {
     setTimeout(() => {
-        console.log(`El resultado de ${num1} + ${num2} = ${resultado}`);
+        const operation = num1 + num2;
+        console.log(`El resultado de ${num1} + ${num2} = ${operation}`);
     }, 5000);
-} );
+}
+
+const result = sumar(10, 4, sumOperation);
 
 console.log(result);
-
 
 /* ----------------------------------------------------------------------------- */
 
