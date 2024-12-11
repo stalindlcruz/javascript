@@ -1,13 +1,11 @@
+// CRUD
 
-// put / path
-// get 
-// post
-// delete
-
-// CRUD 
+// put / path   --> Actualizar completamente un recurso
+// get  --> Obtener datos
+// post --> Enviar datos para crear algo nuevo
+// delete   --> Eliminar un recurso
 
 // ENDPOINT
-
  
 // async function getUser() {
 //     try {
