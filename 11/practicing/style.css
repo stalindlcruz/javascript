@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #bcdbd6;
+}
+
+.divName, .divEmail {
+    background-color: aliceblue;
+    width: 500px;
+    height: 100px;
+    display: grid;
+    place-content: center;
+    margin: 10px;
+}
+
+.h2Name, .h2Email {
+    color: #91d1c7;
+    font-size: 20px;
+}
+
+.pName, .pEmail {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+.divComment {
+    background-color: aliceblue;
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+    font-size: 30px;
+    padding: 10px;
+}
