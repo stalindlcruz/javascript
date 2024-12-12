@@ -5,6 +5,7 @@
 // }
 
 // npm install -g typescript -> ejecuta este codigo en la terminal para instalar typeScript
+// tsc nombreDelarchivo --> para compilar
 
 class Persona {
   nombre: string;
