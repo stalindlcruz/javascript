@@ -4,6 +4,8 @@
 //     // const result = await fetch('')
 // }
 
+// npm install -g typescript -> ejecuta este codigo en la terminal para instalar typeScript
+
 class Persona {
   nombre: string;
   age: number;
