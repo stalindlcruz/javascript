@@ -15,8 +15,7 @@
 /* 
 TypeScript permite realizar sobrecarga de funciones (overload), pero de manera diferentes a lenguajes como Java o C#.
 
-En TypeScript, puedes declarar multiples firmas de función (overload signatures) y luego manejar una única implementación
-que maneje todas esas firmas.
+En TypeScript, puedes declarar multiples firmas de función (overload signatures) y luego manejar una única implementación que maneje todas esas firmas.
 
 En TypeScript, no puedes no puedes definir multiples implementaciones del mismo método o función dentro
 de una clase. Esto generara un error porque estarías
