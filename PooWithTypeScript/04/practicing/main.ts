@@ -59,31 +59,26 @@ Usar el modificador override es una forma de garantizar que
 un metodo en una clase derivada realmente sobreescribe un
 metodo de su clase base.
 
-• Confirma la sobreescritura: Garantiza que el metodo o propiedad en la clase derivada esta sobre escribiendo uno definido en la
-clase base.
+• Confirma la sobreescritura: Garantiza que el metodo o propiedad en la clase derivada esta sobre escribiendo uno definido en la clase base.
 
-• Evita errores accidentales: Si no existe un metodo o propiedad con el mismo nombre en la clase base, TypeScript lanzara un
-error en tiempo de compilacion.
+• Evita errores accidentales: Si no existe un metodo o propiedad con el mismo nombre en la clase base, TypeScript lanzara un error en tiempo de compilacion.
 
-No es obligatorio usar override, pero es altamente recomendable
-porque:
+No es obligatorio usar override, pero es altamente recomendable, porque:
 
 • Ayuda a evitar errores, como escribir mal el nombre en la
 clase derivada.
 
-• Mejora la claridad del codigo al indicar explicitamente que el
-metodo sobreescribe uno existetnte.
+• Mejora la claridad del codigo al indicar explicitamente que el metodo sobreescribe uno existetnte.
 
 Sin override, el codigo funcionara igual, pero no tendra la validacion adicional.
 
 *** El modificador override solo es aplicable a metodos o propiedades NO ESTATICAS definidos en una clase base y sobre escritos en una clase derivada.
 
-• Metododos Estaticos no permiten override.
+• Metodos Estaticos no permiten override.
 
 • Si necesitas redefinir un método estático en una clase derivada, simplemente redefínelo sin override.
 
 • Si es posible, considera usar métodos de instancia si deseas aprovechar el comportamiento de override.
-
 */
 
 
