@@ -82,7 +82,7 @@ Sin override, el codigo funcionara igual, pero no tendra la validacion adicional
 */
 
 
-class Animal {
+/* class Animal {
     hacerSonido(): void {
         console.log('El animal esta haciendo un sonido');
     }
@@ -95,10 +95,128 @@ class Perro extends Animal {
 }
 
 const miPerro = new Perro();
-miPerro.hacerSonido();
+miPerro.hacerSonido(); */
 // console.log(miPerro.hacerSonido();
 
 
 // console.log(CustomMath.resta(30, 10));
 // console.log(CustomMath.resta(30, 10, 5));
 // console.log(CustomMath2.resta(40, 20, 10));
+
+
+
+/* ------------------------------------------------------------------ */
+// Interface
+
+/* interface Car {
+    brand: string;
+    model: string;
+    year: number;
+    plate: string;
+    color: string;
+
+    break?(): string;
+}
+
+class Tesla {
+    public propertys: Car;
+
+    constructor () {
+        this.propertys = {
+            brand: 'Tesla',
+            model: 'Tesla X',
+            year: 2025,
+            plate: 'NHL8967',
+            color: 'White',
+
+            break: () => {
+                return 'Im breaking my new Tesla model X'
+            }
+        }
+    }
+}
+
+const teslaX = new Tesla();
+console.log(teslaX.propertys.break?.()); */
+
+
+
+/* class Tesla implements Car {
+    public brand: string;
+    public model: string;
+    public year: number;
+    public plate: string;
+    public color: string;
+
+    // constructor(brand: string, model: string, year: number, plate: string, color: string) {
+    //     this.brand = brand;
+    //     this.model = model;
+    //     this.year = year;
+    //     this.plate = plate;
+    //     this.color = color;
+    // }
+
+    constructor(carDetails: Car) {
+        this.brand = carDetails.brand;
+        this.model = carDetails.model;
+        this.year = carDetails.year;
+        this.plate = carDetails.plate;
+        this.color = carDetails.color;
+    }
+
+    break(): string {
+        return 'Tesla is breaking!';
+    }
+} */
+
+// const teslaX = new Tesla(
+//     'Tesla',
+//     'Model X',
+//     2025,
+//     'NHL8567',
+//     'White'
+// );
+
+// const teslaX = new Tesla({
+//     brand: 'Tesla',
+//     model: 'Model X',
+//     year : 2025,
+//     plate: 'NHL4055',
+//     color: 'White',
+
+//     break() {
+//         return this.break()
+//     },
+// });
+
+/* const teslaDetails: Car = {
+    brand: 'Tesla',
+    model: 'Model X',
+    year : 2025,
+    plate: 'NHL4055',
+    color: 'White',
+};
+
+const teslaX = new Tesla(teslaDetails);
+
+console.log(teslaX.break()); */
+
+
+class People {
+    constructor (
+        public nombre: string,
+        public edad: number
+    ) {}
+}
+
+class Person1 {
+    // public person: People = {
+    //     nombre: 'Engels',
+    //     edad: 29
+    // }
+
+    public person: People = new People('Stalin', 29);
+}
+
+const x = new Person1().person.nombre;
+console.log(x);

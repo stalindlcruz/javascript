@@ -1,19 +1,4 @@
 // class CustomMath {
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 //     public static resta(x: number, y: number): number {
 //         return x - y;
 //     }
@@ -25,8 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 /*
 TypeScript permite realizar sobrecarga de funciones (overload), pero de manera diferentes a lenguajes como Java o C#.
 
-En TypeScript, puedes declarar multiples firmas de función (overload signatures) y luego manejar una única implementación
-que maneje todas esas firmas.
+En TypeScript, puedes declarar multiples firmas de función (overload signatures) y luego manejar una única implementación que maneje todas esas firmas.
 
 En TypeScript, no puedes no puedes definir multiples implementaciones del mismo método o función dentro
 de una clase. Esto generara un error porque estarías
@@ -57,27 +41,156 @@ class CustomMath2 extends CustomMath {
         }
     }
 } */
-var Animal = /** @class */ (function () {
-    function Animal() {
-    }
-    Animal.prototype.hacerSonido = function () {
+/*
+Modificador override
+--------------------
+
+Usar el modificador override es una forma de garantizar que
+un metodo en una clase derivada realmente sobreescribe un
+metodo de su clase base.
+
+• Confirma la sobreescritura: Garantiza que el metodo o propiedad en la clase derivada esta sobre escribiendo uno definido en la clase base.
+
+• Evita errores accidentales: Si no existe un metodo o propiedad con el mismo nombre en la clase base, TypeScript lanzara un error en tiempo de compilacion.
+
+No es obligatorio usar override, pero es altamente recomendable, porque:
+
+• Ayuda a evitar errores, como escribir mal el nombre en la
+clase derivada.
+
+• Mejora la claridad del codigo al indicar explicitamente que el metodo sobreescribe uno existetnte.
+
+Sin override, el codigo funcionara igual, pero no tendra la validacion adicional.
+
+*** El modificador override solo es aplicable a metodos o propiedades NO ESTATICAS definidos en una clase base y sobre escritos en una clase derivada.
+
+• Metodos Estaticos no permiten override.
+
+• Si necesitas redefinir un método estático en una clase derivada, simplemente redefínelo sin override.
+
+• Si es posible, considera usar métodos de instancia si deseas aprovechar el comportamiento de override.
+*/
+/* class Animal {
+    hacerSonido(): void {
         console.log('El animal esta haciendo un sonido');
-    };
-    return Animal;
-}());
-var Perro = /** @class */ (function (_super) {
-    __extends(Perro, _super);
-    function Perro() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Perro.prototype.hacerSonido = function () {
+}
+
+class Perro extends Animal {
+    override hacerSonido(): void {
         console.log('Ladrando');
-    };
-    return Perro;
-}(Animal));
-var miPerro = new Perro();
-miPerro.hacerSonido();
-// console.log();
+    }
+}
+
+const miPerro = new Perro();
+miPerro.hacerSonido(); */
+// console.log(miPerro.hacerSonido();
 // console.log(CustomMath.resta(30, 10));
 // console.log(CustomMath.resta(30, 10, 5));
 // console.log(CustomMath2.resta(40, 20, 10));
+/* ------------------------------------------------------------------ */
+// Interface
+/* interface Car {
+    brand: string;
+    model: string;
+    year: number;
+    plate: string;
+    color: string;
+
+    break?(): string;
+}
+
+class Tesla {
+    public propertys: Car;
+
+    constructor () {
+        this.propertys = {
+            brand: 'Tesla',
+            model: 'Tesla X',
+            year: 2025,
+            plate: 'NHL8967',
+            color: 'White',
+
+            break: () => {
+                return 'Im breaking my new Tesla model X'
+            }
+        }
+    }
+}
+
+const teslaX = new Tesla();
+console.log(teslaX.propertys.break?.()); */
+/* class Tesla implements Car {
+    public brand: string;
+    public model: string;
+    public year: number;
+    public plate: string;
+    public color: string;
+
+    // constructor(brand: string, model: string, year: number, plate: string, color: string) {
+    //     this.brand = brand;
+    //     this.model = model;
+    //     this.year = year;
+    //     this.plate = plate;
+    //     this.color = color;
+    // }
+
+    constructor(carDetails: Car) {
+        this.brand = carDetails.brand;
+        this.model = carDetails.model;
+        this.year = carDetails.year;
+        this.plate = carDetails.plate;
+        this.color = carDetails.color;
+    }
+
+    break(): string {
+        return 'Tesla is breaking!';
+    }
+} */
+// const teslaX = new Tesla(
+//     'Tesla',
+//     'Model X',
+//     2025,
+//     'NHL8567',
+//     'White'
+// );
+// const teslaX = new Tesla({
+//     brand: 'Tesla',
+//     model: 'Model X',
+//     year : 2025,
+//     plate: 'NHL4055',
+//     color: 'White',
+//     break() {
+//         return this.break()
+//     },
+// });
+/* const teslaDetails: Car = {
+    brand: 'Tesla',
+    model: 'Model X',
+    year : 2025,
+    plate: 'NHL4055',
+    color: 'White',
+};
+
+const teslaX = new Tesla(teslaDetails);
+
+console.log(teslaX.break()); */
+var People = /** @class */ (function () {
+    function People(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    return People;
+}());
+var Person1 = /** @class */ (function () {
+    function Person1() {
+        // public person: People = {
+        //     nombre: 'Engels',
+        //     edad: 29
+        // }
+        this.person = new People('Stalin', 29);
+    }
+    return Person1;
+}());
+var x = new Person1().person.nombre;
+console.log(x);
