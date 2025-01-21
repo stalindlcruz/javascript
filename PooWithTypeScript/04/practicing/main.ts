@@ -202,7 +202,7 @@ const teslaX = new Tesla(teslaDetails);
 console.log(teslaX.break()); */
 
 
-class People {
+/* class People {
     constructor (
         public nombre: string,
         public edad: number
@@ -219,4 +219,73 @@ class Person1 {
 }
 
 const x = new Person1().person.nombre;
-console.log(x);
+console.log(x); */
+
+
+
+/* ------------------------------------------------------------------ */
+// Polimorfismo
+
+/* 
+Permite que los objetos de diferentes clases puedan ser tratados de manera uniforme a traves de una interfaz comun. En pocas palabras el polimorfismo significa "muchas formas". En el contexto de POO, esto se refiere a la capacidad de una entidad (como un metodo o una clase) de comportarse de diferentes maneras segun el contexto.
+*/
+
+/* 
+Polimorfismo en tiempo de compilacion (estatico)
+
+• Este tipo de polimorfismo ocurre en el momento de la compilacion y se implementa mediante sobrecargas de metodos o sobre carga de operadores.
+*/
+
+/* class Calculadora {
+    sumar(a: number, b: number): number;
+    sumar(a: number, b: number, c: number): number;
+    sumar(a: number, b: number, c?: number): number {
+        return c !== undefined ? a + b + c : a + b;
+    }
+}
+
+const calc = new Calculadora();
+console.log(calc.sumar(2, 3));
+console.log(calc.sumar(2, 3, 4)); */
+
+
+/* 
+Polimorfismo en tiempo de ejecucion (dinamico)
+
+• Este tipo ocurre durante la ejecucion del programa y se logra mediante la herencia y sobreescritura de metodos.
+
+• Es cuando una clase hija redefine un metodo de su clase padre para proporcionar su propia implementacion, pero puede ser llamada de manera uniforme a traves de la referencia del padre.
+*/
+
+class Animal {
+    hacerSonido(): void {
+        console.log("Sonido genérico de un animal");
+    }
+}
+
+class Perro extends Animal {
+    hacerSonido(): void {
+        console.log("Guau guau");
+    }
+}
+
+class Gato extends Animal {
+    hacerSonido(): void {
+        console.log("Miau miau");
+    }
+}
+
+const animales: Animal[] = [new Perro(), new Gato(), new Animal()];
+
+animales.forEach((animal) => animal.hacerSonido());
+
+
+/* 
+Ventajas del polimorfismo
+
+• Flexibilidad: Permite escribir codigo generico que puede trabajar con diferentes tipos de objetos.
+
+• Reutilizacion: El mismo metodo o interfaz se puede usar para diferentes implementaciones.
+
+• Excalabilidad: Facilita la ampliacion del sistema al agregar nuevas clases sin cambiar el codigo existente.
+*/

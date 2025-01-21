@@ -175,22 +175,37 @@ console.log(teslaX.propertys.break?.()); */
 const teslaX = new Tesla(teslaDetails);
 
 console.log(teslaX.break()); */
-var People = /** @class */ (function () {
-    function People(nombre, edad) {
-        this.nombre = nombre;
-        this.edad = edad;
+/* class People {
+    constructor (
+        public nombre: string,
+        public edad: number
+    ) {}
+}
+
+class Person1 {
+    // public person: People = {
+    //     nombre: 'Engels',
+    //     edad: 29
+    // }
+
+    public person: People = new People('Stalin', 29);
+}
+
+const x = new Person1().person.nombre;
+console.log(x); */
+/* ------------------------------------------------------------------ */
+// Polimorfismo
+/*
+Permite que los objetos de diferentes clases puedan ser tratados de manera uniforme a traves de una interfaz comun. En pocas palabras el polimorfismo significa "muchas formas". En el contexto de POO, esto se refiere a la capacidad de una entidad (como un metodo o una clase) de comportarse de diferentes maneras segun el contexto.
+*/
+var Calculadora = /** @class */ (function () {
+    function Calculadora() {
     }
-    return People;
+    Calculadora.prototype.sumar = function (a, b, c) {
+        return c !== undefined ? a + b + c : a + b;
+    };
+    return Calculadora;
 }());
-var Person1 = /** @class */ (function () {
-    function Person1() {
-        // public person: People = {
-        //     nombre: 'Engels',
-        //     edad: 29
-        // }
-        this.person = new People('Stalin', 29);
-    }
-    return Person1;
-}());
-var x = new Person1().person.nombre;
-console.log(x);
+var calc = new Calculadora();
+console.log(calc.sumar(2, 3));
+console.log(calc.sumar(2, 3, 4));
