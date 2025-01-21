@@ -227,7 +227,23 @@ console.log(x); */
 // Polimorfismo
 
 /* 
-Permite que los objetos de diferentes clases puedan ser tratados de manera uniforme a traves de una interfaz comun. En pocas palabras el polimorfismo significa "muchas formas". En el contexto de POO, esto se refiere a la capacidad de una entidad (como un metodo o una clase) de comportarse de diferentes maneras segun el contexto.
+En la Programacion orientada a objetos (POO), el polimorfismo es la capacidad de un objeto para responder de manera diferente a un mismo mensaje. Esto significa que los objetos pueden adoptar distintas formas, o ejecutar diferentes operaciones, dependiendo del cotexto.
+
+El polimorfismo es un concepto fundamental en POO, ya que permite que el codigo sea mas flexible y adaptable a diferentes situaciones.
+
+VENTAJAS DEL POLIMORFISMO
+
+• Permite expandir la funcionalidad del programa sin modificar el codigo existente.
+
+• Simplifica la logica del codigo, lo que mejora su legibilidad y claridad.
+
+• Fomenta la desacoplacion y la modularidad del codigo.
+
+COMO FUNCIONA EL POLIMORFISMO
+
+• El polimorfismo se puede lograr a traves de la sobreescritura de metodos.
+
+• En la sobreescritura de metodos, una subclase proporciona su propia implementacion de un metodo que ya ha sido definido en su superclase.
 */
 
 /* 
@@ -257,7 +273,7 @@ Polimorfismo en tiempo de ejecucion (dinamico)
 • Es cuando una clase hija redefine un metodo de su clase padre para proporcionar su propia implementacion, pero puede ser llamada de manera uniforme a traves de la referencia del padre.
 */
 
-class Animal {
+/* class Animal {
     hacerSonido(): void {
         console.log("Sonido genérico de un animal");
     }
@@ -277,7 +293,7 @@ class Gato extends Animal {
 
 const animales: Animal[] = [new Perro(), new Gato(), new Animal()];
 
-animales.forEach((animal) => animal.hacerSonido());
+animales.forEach((animal) => animal.hacerSonido()); */
 
 
 /* 
@@ -289,3 +305,50 @@ Ventajas del polimorfismo
 
 • Excalabilidad: Facilita la ampliacion del sistema al agregar nuevas clases sin cambiar el codigo existente.
 */
+
+
+
+/* ------------------------------------------------------------------ */
+// Clases Abstractas
+
+/* 
+En la programación orientada a objetos (POO), las clases abstractas son clases que no pueden ser instanciadas directamente, pero que sirven como base para crear otras clases.
+
+Las clases abstractas se utilizan para definir un comportamiento general que las clases que las heredan deben implementar.
+
+CARACTERISTICAS DE LAS CLASES ABSTRACTAS
+
+• No pueden ser instanciadas, es decir, no se pueden crear objetos a partir de ellas.
+
+• Representan la funcionalidad comun de un cojunto de tipos de objetos.
+
+• Se utilizan como clases base de una jerarquia.
+
+• Permiten reutilizar el codigo de una forma eficiente.
+
+COMO UTILIZAR UNA CLASE ABSTRACTA
+
+Para utilizar una clase abstracta, se debe heredar de ella y proporcionar una implementación para todos los métodos abstractos definidos en la clase.
+*/
+
+abstract class Animal {
+    constructor(public nombre: string) {}
+
+    // Método abstracto: debe ser implementado en clases hijas
+    public abstract hacerSonido(): void;
+
+    // Método con implementación
+    public comer(): void {
+        console.log(`${this.nombre} está comiendo`);
+    }
+}
+
+class Perro extends Animal {
+    public hacerSonido(): void {
+        console.log('Guau Guau');
+    }
+}
+
+const perro = new Perro('Firulais');
+perro.hacerSonido();
+perro.comer();
