@@ -331,7 +331,7 @@ COMO UTILIZAR UNA CLASE ABSTRACTA
 Para utilizar una clase abstracta, se debe heredar de ella y proporcionar una implementación para todos los métodos abstractos definidos en la clase.
 */
 
-abstract class Animal {
+/* abstract class Animal {
     constructor(public nombre: string) {}
 
     // Método abstracto: debe ser implementado en clases hijas
@@ -351,4 +351,161 @@ class Perro extends Animal {
 
 const perro = new Perro('Firulais');
 perro.hacerSonido();
-perro.comer();
+perro.comer(); */
+
+
+
+/* ------------------------------------------------------------------ */
+// Genericos
+
+/* 
+Los genericos permiten que un componente (funcion, clase o interfaz) trabaje con tipos diferentes, pero de una manera que garantiza que el tipo que uses sea consistente en toda la implementacion.
+
+Los genericos en TypeScript son una forma de escribir codigo reutilizable y flexible, que puede trabajar con multiples tipos mientras mantiene la seguridad de tipos.
+
+Son utiles cuando no sabes de antemano que tipo de datos manejara tu codigo.
+
+POR QUE SON UTILES LOS GENERICOS?
+
+• Reutilizables: Escribes codigo una vez y lo puedes usar con diferentes tipos.
+
+• Consistencia: Garantiza que los tipos son consistentes dentro de la logica.
+
+• Seguridad de tipos: Evitan errores al garantizar que los tipos coincidan.
+*/
+
+/*
+// USO DE GENERICOS EN FUNCIONES
+// Sin genericos
+function person(name:any) {
+    return name;
+}
+
+const result = person(20); // "any", pierde el tipo original
+console.log(result);
+// Aqui usamos any, pero TypeScript no sabe que tipo retorna la funcion. Podrias terminar con errores porque se pierde la seguridad de tipos.
+
+// Con genericos
+function tipo <T> (valor: T): T {
+    return valor
+}
+
+const numero = tipo <number> (50);
+const texto = tipo <string> ('Texto');
+console.log(numero);
+console.log(texto);
+*/
+
+
+/*
+// USO DE GENERICOS EN CLASES
+class Caja <T> {
+    private contenido: T;
+
+    constructor(contenido: T) {
+        this.contenido = contenido;
+    }
+
+    obtenerContenido(): T {
+        return this.contenido;
+    }
+}
+
+// Crear una caja de números
+const cajaNumero = new Caja <number> (123);
+console.log(cajaNumero.obtenerContenido());
+
+// Crear una caja de cadenas
+const cajaTexto = new Caja <string> ('Hola');
+console.log(cajaTexto.obtenerContenido());
+*/
+
+
+
+/*
+//USO DE GENERICOS EN INTERFACES
+interface Par <K, V> {
+    clave: K;
+    valor: V;
+}
+
+const par: Par <string, number> = {
+    clave: 'edad',
+    valor: 30,
+}
+
+console.log(par.clave);
+console.log(par.valor);
+*/
+
+
+
+// RESTICCONES DE GENERICOS
+/* Cuando usas genéricos en TypeScript, puedes trabajar con cualquier tipo. Sin embargo, a veces necesitas limitar el conjunto de tipos permitidos para garantizar que tu código solo funcione con tipos que tengan ciertas propiedades o comportamientos.
+
+Esto se logra usando la palabra clave extends, que actúa como una restricción para el tipo genérico. */
+
+/*
+function imprimirId <T extends { id: number }> (objeto: T): string {
+    return `El ID es: ${objeto.id}`
+}
+
+console.log(imprimirId({ id: 1}));
+*/
+
+
+
+/* // GENERICOS CON MULTIPLES PARAMETROS
+function combinar<T, U>(primero: T, segundo: U): [T, U] {
+    return [primero, segundo];
+}
+
+const resultado = combinar<string, number>('Hola', 42);
+console.log(resultado); */
+
+
+
+// CLASES GENERICAS
+interface Producto {
+    id: number;
+    nombre: string;
+}
+
+interface Usuario {
+    id: number;
+    nombre: string;
+    edad: number;
+}
+
+class Caja<T> {
+    public contenido: T;
+
+    constructor(valor: T) {
+        this.contenido = valor; // El contenido será del tipo definido al crear la instancia
+    }
+
+    public obtenerContenido(): T {
+        return this.contenido;
+    }
+
+    public actualizarContenido<U>(nuevoValor: U): U {
+        // Este método usa un genérico independiente de la clase
+        return nuevoValor;
+    }
+}
+
+// 1. Instanciamos la clase usando un tipo específico (Producto)
+const cajaProducto = new Caja<Producto>({ id: 1, nombre: 'Laptop' });
+console.log(cajaProducto.obtenerContenido()); // { id: 1, nombre: 'Laptop' }
+
+// 2. Actualizamos el contenido usando un tipo independiente (Usuario)
+const nuevoUsuario = cajaProducto.actualizarContenido<Usuario>({ id: 2, nombre: 'Stalin', edad: 30 });
+console.log(nuevoUsuario); // { id: 2, nombre: 'Stalin', edad: 30 }
+
+// 3. Instanciamos la clase sin especificar el tipo genérico (asume any)
+const cajaGenerica = new Caja('Cualquier cosa');
+console.log(cajaGenerica.obtenerContenido()); // 'Cualquier cosa'
+
+// 4. Llamamos al método con un genérico independiente
+const nuevoValor = cajaGenerica.actualizarContenido<number>(42);
+console.log(nuevoValor); // 42
