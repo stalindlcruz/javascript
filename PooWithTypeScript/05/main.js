@@ -1,8 +1,6 @@
 // https://matiashernandez.dev/blog/post/types-vs-interfaces-cuando-utilizar-cada-una
 // https://codigolinea.com/evite-usar-any-use-unknown-en-typescript/
 // https://www.typescriptlang.org/docs/handbook/utility-types.html
-
-
 /*
 ABSTRACCION EN PROGRAMACION ORIENTADA A OBJETOS (POO)
 -----------------------------------------------------
@@ -65,8 +63,6 @@ DETALLES IMPORTANTES:
 
     • Las clases derivadas deben proporcionar la implementación o asignación de valor.
 */
-
-
 /*
 // Clase abstracta
 abstract class Vehiculo {
@@ -95,16 +91,13 @@ miAuto.encender();
 miAuto.estado();
 miAuto.apagar();
 */
-
-/* 
+/*
 EN ESTE EJEMPLO
 
 • La clase vehiculo abstrae el concepto de un vehiculo.
 
 • La clase automovil implementa los detalles especificos de como encender y apagar el vehiculo.
 */
-
-
 /*
 class Persona {
     nombre: string;
@@ -138,44 +131,28 @@ class Estudiante extends Persona {
 const estudiante = new Estudiante("Stalin", "10°");
 estudiante.saludar();
 */
-
-
-
-class Utilitys {
-    static getFormattedDate(date: Date): string {
+var Utilitys = /** @class */ (function () {
+    function Utilitys() {
+    }
+    Utilitys.getFormattedDate = function (date) {
         return date.toISOString();
-    }
-
-    static getFormattedTime(date: Date): string {
+    };
+    Utilitys.getFormattedTime = function (date) {
         return date.toTimeString();
+    };
+    return Utilitys;
+}());
+var Registro = /** @class */ (function () {
+    function Registro(id, data, valor) {
+        this.id = id;
+        this.data = data;
+        this.valor = valor;
     }
-}
-
-class Registro {
-    constructor(
-        public id: number,
-        public data: Date,
-        public valor: number
-    ) {  }
-
-    public registrar(): void {
-        console.log(`Data: ${Utilitys.getFormattedDate(this.data)}`);
-        console.log(`Valor: ${this.valor}`);
-    }
-}
-
-const registro = new Registro(1, new Date(), 100);
+    Registro.prototype.registrar = function () {
+        console.log("Data: ".concat(Utilitys.getFormattedDate(this.data)));
+        console.log("Valor: ".concat(this.valor));
+    };
+    return Registro;
+}());
+var registro = new Registro(1, new Date(), 100);
 registro.registrar();
-
-
-/* 
-Los métodos estáticos son accesibles directamente a través del nombre de la clase sin la necesidad de extenderla ni declararla explícitamente.
-
-En TypeScript (y en JavaScript), los métodos marcados como static pertenecen directamente a la clase y no a las instancias de la clase. Esto significa que no necesitas crear un objeto de la clase ni extenderla para acceder a ellos. Solo tienes que usar el nombre de la clase seguido del nombre del método.
-
-VENTAJAS DE LOS METODOS STATICOS:
-
-• MODULARIDAD: Permiten crear funciones utilitarias que no dependen de ninguna instancia.
-
-• NO NECESITAS HERENCIA: Puedes usar estos métodos desde cualquier parte del código siempre que tengas acceso a la clase.
-*/
