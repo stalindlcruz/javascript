@@ -7,6 +7,8 @@
 ABSTRACCION EN PROGRAMACION ORIENTADA A OBJETOS (POO)
 -----------------------------------------------------
 
+La abstracción en programación orientada a objetos (POO) es una técnica que simplifica la complejidad de un sistema de software. Permite centrarse en los aspectos más relevantes de un objeto, sin necesidad de conocer los detalles de su funcionamiento.
+
 La abstracción en Programación Orientada a Objetos (POO) es un principio que consiste en ocultar los detalles internos de implementación de un objeto y mostrar únicamente lo que es relevante o esencial para su uso. Es una forma de simplificar la complejidad al enfocarse en las características importantes de un objeto en lugar de en su funcionamiento interno.
 
 EJEMPLO SENCILLO:
