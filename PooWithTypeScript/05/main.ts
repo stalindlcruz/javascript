@@ -143,7 +143,7 @@ estudiante.saludar();
 
 
 
-class Utilitys {
+/* class Utilitys {
     static getFormattedDate(date: Date): string {
         return date.toISOString();
     }
@@ -167,7 +167,7 @@ class Registro {
 }
 
 const registro = new Registro(1, new Date(), 100);
-registro.registrar();
+registro.registrar(); */
 
 
 /* 
@@ -181,3 +181,159 @@ VENTAJAS DE LOS METODOS STATICOS:
 
 • NO NECESITAS HERENCIA: Puedes usar estos métodos desde cualquier parte del código siempre que tengas acceso a la clase.
 */
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Types and Interfaces */
+
+// Un type en TypeScript es una forma de definir un alias para un tipo, ya sea un tipo primitivo, una unión, una intersección o incluso un objeto complejo. Los types permiten estructurar y reutilizar tipos en tu código, lo que facilita el mantenimiento y la legibilidad.
+
+// Alias para un tipo primitivo
+/* type ID = string | number; */
+
+// Tipo para un objeto
+/* type User = {
+  id: ID;
+  name: string;
+  isAdmin: boolean;
+}; */
+
+// Uso
+/* const user: User = {
+  id: 1,
+  name: "Stalin",
+  isAdmin: true,
+}; */
+
+
+
+/* Extensibilidad */
+
+// type no permite fusionarse
+/* type Car = {
+    make: string;
+    model: string;
+}; */
+// Error si intentas añadir mas ropiedades en otro lugar.
+
+
+// interface permite la fusion
+/* interface Car1 {
+    make: string;
+    model: string;
+};
+interface Car1 {
+    year: number;
+};
+
+const myCar1: Car1 = {
+    make: 'Toyota',
+    model: 'Hihlander',
+    year: 2013,
+    color: 'Red'
+};
+
+interface Car1 {
+    color: string;
+}; */
+
+
+
+/* Unión de tipos */
+
+// Posible con type
+/* type Status = 'success' | 'error' | 'loading'; */
+
+// Esto no funciona con interface.
+
+
+
+/* Herencia / Extencion */
+
+// Con type
+/* type Animal = {
+    name: string;
+};
+type X = {
+    age: number;
+};
+
+type Dog = Animal & {
+    breed: string;
+};
+type Dog1 = Animal & X & {
+    breed: string;
+}; */
+
+
+/*
+Intersection Type "&"
+---------------------
+En TypeScript, el símbolo "&" se llama operador de intersección (intersection type) y se utiliza para combinar varios tipos en uno solo.
+
+El operador de intersección (&) combina las propiedades de dos (o más) tipos en un único tipo. Esto significa que el tipo resultante debe cumplir con las propiedades de todos los tipos involucrados.
+
+CUANDO USAR CADA UNO:
+
+USA TYPE:
+    • Para tipos complejos como uniones, intersecciones o alias para tipos primitivos.
+
+    • Cuando necesites combinaciones avanzadas de tipos.
+
+USA INTERFACE:
+    • Para definir estructuras de objetos, especialmente cuando trabajas con POO o necesitas extensibilidad.
+*/
+
+/* const myDog: Dog = {
+    name: 'Buddy',
+    breed: 'Golden Retriever'
+};
+const myDog1: Dog1 = {
+    name: 'Buddy',
+    breed: 'Golden Retriever',
+    age: 5,
+};
+*/
+
+
+
+/* interface Platano {
+    nombre : string;
+    tipo: string
+}
+
+interface Platano1 {
+    nombre : string;
+    tipo: string
+}
+
+type Yuca = {
+    nombre: string;
+    tipo: string;
+}
+
+type papa = {
+    nombre: string;
+    tipo: string;
+}
+
+class Viberes {
+    public platano: Platano = {
+        nombre: 'Platano',
+        tipo: 'Maduro'
+    }
+    public yuca: Yuca = {
+        nombre: 'Platano',
+        tipo: 'Maduro'
+    }
+    public _viberes: Yuca | Platano1 = {
+        nombre: 'Platano',
+        tipo: 'Maduro'
+    }
+
+    public getPlatano(): { nombre: string, tipo: string } {
+        return this.platano
+    }
+    public getYuca(): Yuca {
+        return this.yuca;
+    }
+} */
