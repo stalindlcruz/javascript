@@ -256,7 +256,8 @@ const myDog1: Dog1 = {
     name: 'Buddy',
     breed: 'Golden Retriever',
     age: 5,
-}; */
+};
+*/
 /* interface Platano {
     nombre : string;
     tipo: string
@@ -297,4 +298,51 @@ class Viberes {
     public getYuca(): Yuca {
         return this.yuca;
     }
-} */ 
+} */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Enums TypeScript */
+/*
+En TypeScript, los enums (enumeraciones) son una característica que permite definir un conjunto de constantes con nombre. Esto hace que el código sea más legible y mantenible, especialmente cuando se trabaja con valores fijos y conocidos.
+
+TIPOS DE ENUMS EN TYPESCRIPT:
+
+1. Enums Numericos
+2. Enums de Cadenas
+3. Enums Heterogéneos (mixtos)
+4. Enums Constantes (const enum)
+*/
+// Enums Numericos: Los valores se asignan automáticamente desde 0, a menos que se especifique otro valor inicial.
+/* enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+let move: Direction = Direction.Down;
+console.log(move); */
+// Tambien se pueden asignar valores personalizados.
+/* enum Status {
+    Success = 1,
+    Failure = -1,
+    Pending = 0
+}
+
+console.log(Status.Pending); */
+// Enums de Cadenas: Se asignan valores de tipo string a cada opcion.
+/* enum Color {
+    Red = 'RED',
+    Green = 'GREEN',
+    Blue = 'BLUE'
+}
+
+console.log(Color.Green); */
+// Enums Heterogéneos (mixtos): Se combinan valores numéricos y de cadena, pero no es recomendable usarlos a menos que sea necesario.
+var MixedEnum;
+(function (MixedEnum) {
+    MixedEnum["Yes"] = "YES";
+    MixedEnum[MixedEnum["No"] = 0] = "No";
+})(MixedEnum || (MixedEnum = {}));
+console.log(MixedEnum.No);
+var mySize = "Hola Soy 3 en String" /* Sizes.Other */;
+console.log(mySize);
