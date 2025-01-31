@@ -338,11 +338,34 @@ console.log(Status.Pending); */
 
 console.log(Color.Green); */
 // Enums Heterogéneos (mixtos): Se combinan valores numéricos y de cadena, pero no es recomendable usarlos a menos que sea necesario.
-var MixedEnum;
-(function (MixedEnum) {
-    MixedEnum["Yes"] = "YES";
-    MixedEnum[MixedEnum["No"] = 0] = "No";
-})(MixedEnum || (MixedEnum = {}));
-console.log(MixedEnum.No);
-var mySize = "Hola Soy 3 en String" /* Sizes.Other */;
-console.log(mySize);
+/* enum MixedEnum {
+    Yes = 'YES',
+    No = 0
+}
+
+console.log(MixedEnum.No); */
+// Enums Constantes (const enum): Se eliminan en la compilación para optimizar el rendimiento.
+/* const enum Sizes {
+    Small = 1,
+    Medium = 2,
+    Large = 3,
+    Other = 'Hola Soy 3 en String',
+}
+
+let mySize = Sizes.Other;
+console.log(mySize); */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+// Unknown
+/*
+En TypeScript, unknown es un tipo seguro que representa un valor cuyo tipo no se conoce en el momento de la asignación. Se introdujo para proporcionar una alternativa más segura a any.
+*/
+var valorDesconocido;
+valorDesconocido = 'Hola';
+valorDesconocido = 42;
+// Error, No se puede asignar directamente a una variable con un tipo específico sin verificación.
+// let mensaje: string = valorDesconocido;
+// Se necesita una verificaion de tipo
+if (typeof valorDesconocido == 'string') {
+    var mensaje = valorDesconocido; // Ahora es seguro
+    console.log(mensaje);
+}

@@ -98,7 +98,7 @@ miAuto.estado();
 miAuto.apagar();
 */
 
-/* 
+/*
 EN ESTE EJEMPLO
 
 • La clase vehiculo abstrae el concepto de un vehiculo.
@@ -170,7 +170,7 @@ const registro = new Registro(1, new Date(), 100);
 registro.registrar(); */
 
 
-/* 
+/*
 Los métodos estáticos son accesibles directamente a través del nombre de la clase sin la necesidad de extenderla ni declararla explícitamente.
 
 En TypeScript (y en JavaScript), los métodos marcados como static pertenecen directamente a la clase y no a las instancias de la clase. Esto significa que no necesitas crear un objeto de la clase ni extenderla para acceder a ellos. Solo tienes que usar el nombre de la clase seguido del nombre del método.
@@ -403,3 +403,248 @@ console.log(MixedEnum.No); */
 
 let mySize = Sizes.Other;
 console.log(mySize); */
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+// Unknown
+
+/*
+En TypeScript, unknown es un tipo seguro que representa un valor cuyo tipo no se conoce en el momento de la asignación. Se introdujo para proporcionar una alternativa más segura a any.
+
+unknown es un tipo de dato en TypeScript que se usa cuando no sabemos de antemano qué tipo de valor tendrá una variable. Es más seguro que any, porque obliga a hacer una verificación de tipo antes de usarlo.
+
+En TypeScript, unknown es un tipo especial que te permite almacenar cualquier valor, pero NO puedes usar ese valor sin antes verificar su tipo.
+
+Piensa en unknown como una caja cerrada. No puedes ver qué hay adentro hasta que la abras y revises su contenido.
+
+REGLA DE UNKNOWN:
+    • No puedes operar directamente con una variable de tipo unknown sin antes verificar su tipo.
+
+Usa unknown si quieres mayor seguridad y necesitas validar el tipo antes de usarlo.
+
+Usa any si realmente necesitas flexibilidad total y no te preocupan los riesgos de errores en tiempo de ejecución.
+
+✅ unknown permite almacenar cualquier tipo de dato.
+❌ No puedes usarlo directamente sin verificar su tipo antes.
+✅ Debes hacer una verificación de tipo (typeof) antes de operar con él.
+✅ Es más seguro que any porque obliga a validar los datos.
+*/
+
+
+
+/* // Entendiendo unknown paso a paso
+let dato: unknown; // 🔹 Se declara una variable de tipo "unknown"
+
+dato = "Hola, TypeScript"; // ✅ Se le asigna un string
+dato = 42; // ✅ Se le asigna un número
+dato = true; // ✅ Se le asigna un booleano
+
+// ✅ Lo que sí puedes hacer: Asignar cualquier valor a dato.
+// ❌ Lo que no puedes hacer: Usar métodos específicos sin verificar el tipo. */
+
+
+
+/* // El problema de unknown sin verificacion
+let dato: unknown = "Hola";
+
+// ❌ ERROR: No se puede llamar a un método sin comprobar el tipo
+console.log(dato.toUpperCase()); // ❌ Error: "dato" podría no ser un string.
+
+// 🔴 ¿Por qué da error?
+// Porque TypeScript no sabe si dato es un string, por lo que no permite usar .toUpperCase().
+// ✅ Solución: Verificar el tipo antes de usarlo. */
+
+
+
+/* // Verificando el tipo antes de usar unknown
+let dato: unknown = "Hola, Stalin";
+
+// El operador typeof en JavaScript y TypeScript siempre devuelve un string con el nombre del tipo de dato de la variable.
+if (typeof dato === "string") {
+    console.log(dato.toUpperCase()); // ✅ Ahora sí podemos usar toUpperCase()
+} else {
+    console.log("El valor no es un string");
+}
+
+// 🟢 ¿Por qué ahora sí funciona?
+// Porque primero usamos typeof para verificar si dato es un string. Solo si la condición se cumple, usamos .toUpperCase(). */
+
+
+
+/* // Usando unknown con numeros
+let numero: unknown = 123.456;
+
+if (typeof numero === "number") {
+    console.log(numero.toFixed(2)); // ✅ Muestra "123.46"
+} else {
+    console.log("El valor no es un número");
+}
+
+// 🔹 Si numero es un number, entonces TypeScript nos deja usar .toFixed(2). */
+
+
+
+// Unknown con funciones
+
+/* // ❌ Código incorrecto (da error)
+function mostrar(dato: unknown) {
+    console.log(dato.toUpperCase()); // ❌ Error: "dato" podría no ser un string.
+}
+
+mostrar("Hola");
+mostrar(42);
+// 🔴 Error porque no verificamos el tipo antes de usar .toUpperCase(). */
+
+
+/* // ✅ Código correcto con verificación de tipo
+function mostrar(dato: unknown) {
+    if (typeof dato === "string") {
+        console.log(dato.toUpperCase()); // ✅ Ahora sí funciona
+    } else {
+        console.log("El dato no es un string.");
+    }
+}
+
+mostrar("Hola"); // Muestra "HOLA"
+mostrar(42); // Muestra "El dato no es un string."
+// ✅ Aquí verificamos si dato es un string antes de usarlo. */
+
+
+
+/* 
+Cuando usar unknown?
+---------------------
+Usa unknown cuando recibas datos de una fuente desconocida y quieras asegurarte de validarlos antes de usarlos.
+
+Ejemplo típico: Datos de una API o entrada de usuario.
+*/
+
+/* // Ejemplo real: Recibiendo datos desconocidos
+function procesarDato(dato: unknown) {
+    if (typeof dato === "boolean") {
+        console.log("Es un booleano:", dato);
+    } else if (typeof dato === "number") {
+        console.log("Es un número:", dato.toFixed(2));
+    } else if (typeof dato === "string") {
+        console.log("Es un texto:", dato.toUpperCase());
+    } else {
+        console.log("Tipo desconocido.");
+    }
+}
+
+procesarDato(true); // "Es un booleano: true"
+procesarDato(99.99); // "Es un número: 99.99"
+procesarDato("stalin"); // "Es un texto: STALIN"
+procesarDato({}); // "Tipo desconocido."
+// ✅ Aquí comprobamos cada tipo posible antes de usarlo. */
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* 
+Que devuelve typeof?
+--------------------
+El operador typeof en JavaScript y TypeScript siempre devuelve un string con el nombre del tipo de dato de la variable.
+*/
+
+/* // typeof devuelve una cadena de texto.
+console.log(typeof 123);        // "number"
+console.log(typeof "Hola");     // "string"
+console.log(typeof true);       // "boolean"
+console.log(typeof {});         // "object"
+console.log(typeof []);         // "object"
+console.log(typeof undefined);  // "undefined"
+console.log(typeof null);       // "object" (esto es un error histórico de JavaScript)
+console.log(typeof function () { }); // "function" */
+
+/* 
+Conclusión
+    •	typeof siempre devuelve un string con el nombre del tipo.
+    •	Debes comparar con una cadena de texto (especificando dentro del string el tipo de dato), no con el tipo de dato literal.
+    •	Esto permite verificar el tipo antes de usarlo en una operación.
+*/
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* 
+toFixed()
+
+El método toFixed() en JavaScript y TypeScript se usa para formatear un número decimal con una cantidad específica de decimales.
+
+Ejemplo:
+    numero.toFixed(cantidadDeDecimales)
+
+📌 cantidadDeDecimales → Es un número entero que indica cuántos decimales queremos después del punto.
+📌 Devuelve un string, no un number.
+*/
+
+/* let num = 3.1415926535;
+console.log(num.toFixed(2)); // "3.14"
+console.log(num.toFixed(4)); // "3.1416"
+console.log(num.toFixed(0)); // "3" (redondea al entero más cercano)
+
+// 🔹 Si el número tiene más decimales de los especificados, toFixed() redondea el valor.
+// 🔹 Si el número tiene menos decimales de los especificados, agrega ceros a la derecha.
+
+let num1 = 5;
+console.log(num.toFixed(2)); // "5.00"
+
+// ✅ Como 5 no tiene decimales, toFixed(2) le agrega .00. */
+
+
+
+/* // Ejemplo con unknown (aplicación en TypeScript)
+let valor: unknown = 123.456;
+
+if (typeof valor === "number") {
+    console.log(valor.toFixed(2)); // "123.46"
+} else {
+    console.log("No es un número");
+}
+
+// ✅ Solo podemos llamar toFixed(2) si verificamos que valor es un número. */
+
+
+
+/* 
+Por qué toFixed() devuelve un string?
+--------------------------------------
+
+El método toFixed(n) devuelve un string y no un número porque su propósito es formatear. Si necesitas convertirlo a número nuevamente, puedes usar parseFloat():
+*/
+
+/* let num = 2.56789;
+let strNum = num.toFixed(2); // "2.57" (string)
+let floatNum = parseFloat(strNum); // 2.57 (number)
+
+// ✅ Ahora floatNum es un número nuevamente. */
+
+
+/* 
+Resumen
+
+🔹 toFixed(n) sirve para redondear y formatear un número con n decimales.
+🔹 Siempre devuelve un string, no un number.
+🔹 Si faltan decimales, los agrega con ceros.
+🔹 Si sobran decimales, redondea el número.
+*/
+
+
+/* 
+🚀 Ejemplo real en una calculadora
+
+Si estás haciendo una calculadora en JavaScript, puedes usar toFixed(2) para que los resultados tengan solo 2 decimales:
+*/
+
+/* function sumar(a: number, b: number): string {
+    return (a + b).toFixed(2);
+}
+
+console.log(sumar(10.456, 5.123)); // "15.58"
+console.log(sumar(1.2, 2.3)); // "3.50"
+
+// Así evitas resultados con demasiados decimales. */
