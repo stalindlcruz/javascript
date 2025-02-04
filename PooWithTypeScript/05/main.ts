@@ -510,7 +510,7 @@ mostrar(42); // Muestra "El dato no es un string."
 
 
 
-/* 
+/*
 Cuando usar unknown?
 ---------------------
 Usa unknown cuando recibas datos de una fuente desconocida y quieras asegurarte de validarlos antes de usarlos.
@@ -561,7 +561,7 @@ console.log(x.author); // author name
 /* ----------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
-/* 
+/*
 Que devuelve typeof?
 --------------------
 El operador typeof en JavaScript y TypeScript siempre devuelve un string con el nombre del tipo de dato de la variable.
@@ -577,7 +577,7 @@ console.log(typeof undefined);  // "undefined"
 console.log(typeof null);       // "object" (esto es un error histórico de JavaScript)
 console.log(typeof function () { }); // "function" */
 
-/* 
+/*
 Conclusión
     •	typeof siempre devuelve un string con el nombre del tipo.
     •	Debes comparar con una cadena de texto (especificando dentro del string el tipo de dato), no con el tipo de dato literal.
@@ -589,7 +589,7 @@ Conclusión
 /* ----------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
-/* 
+/*
 toFixed()
 
 El método toFixed() en JavaScript y TypeScript se usa para formatear un número decimal con una cantidad específica de decimales.
@@ -629,7 +629,7 @@ if (typeof valor === "number") {
 
 
 
-/* 
+/*
 Por qué toFixed() devuelve un string?
 --------------------------------------
 
@@ -643,7 +643,7 @@ let floatNum = parseFloat(strNum); // 2.57 (number)
 // ✅ Ahora floatNum es un número nuevamente. */
 
 
-/* 
+/*
 Resumen
 
 🔹 toFixed(n) sirve para redondear y formatear un número con n decimales.
@@ -653,7 +653,7 @@ Resumen
 */
 
 
-/* 
+/*
 🚀 Ejemplo real en una calculadora
 
 Si estás haciendo una calculadora en JavaScript, puedes usar toFixed(2) para que los resultados tengan solo 2 decimales:
@@ -667,3 +667,210 @@ console.log(sumar(10.456, 5.123)); // "15.58"
 console.log(sumar(1.2, 2.3)); // "3.50"
 
 // Así evitas resultados con demasiados decimales. */
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------- */
+// Utility Types TypeScript
+
+/*
+Los Utility Types en TypeScript son tipos especiales que ayudan a transformar y reutilizar otros tipos de una manera más sencilla y rápida. Son como herramientas mágicas que nos permiten modificar tipos sin tener que escribir mucho código.
+
+Imagina que tienes una caja de juguetes y quieres hacer cambios en ellos. Algunos Utility Types te permiten quitar piezas de los juguetes, otros te ayudan a hacer copias de los juguetes con cambios específicos, y otros te ayudan a ver cómo será el juguete cuando esté terminado.
+
+Estos tipos son muy útiles porque nos evitan repetir código y nos permiten escribir programas más seguros y organizados.
+
+Los Utility Types en TypeScript son tipos predefinidos que facilitan la manipulación de otros tipos, permitiéndote modificar, extraer o combinar tipos de manera más eficiente. Estos utilitarios ayudan a evitar código repetitivo y hacen que el código sea más seguro y mantenible.
+
+TypeScript ofrece varios tipos de utilidades para facilitar las transformaciones de tipos comunes. Estas utilidades están disponibles en todo el mundo.
+
+Los Utility Types en TypeScript nos ayudan a modificar y reutilizar tipos de una manera más fácil.
+*/
+
+
+
+/* 
+Partial<Type>
+--------------
+Hace que todas las propiedades de un objeto sean opcionales.
+
+Este tipo es útil cuando tienes un objeto y quieres hacer que sus propiedades no sean obligatorias.
+*/
+
+/* // Imagina que tienes un robot que debe tener un nombre y una edad
+type Robot = {
+    name: string;
+    age: number
+};
+
+// Si usas Partial<Robot>, puedes crear un robot sin necesidad de definir todas las propiedades
+let myRobot: Partial<Robot> = {
+    name: "Wall-E", // La edad no es obligatoria
+};
+// Partial<Robot> crea un nuevo tipo donde todas las propiedades son opcionales. Así, no necesitas escribir todos los datos. */
+
+
+
+/*
+Required<Type>
+--------------
+Hace que todas las propiedades de un objeto sean obligatorias.
+
+Este es lo contrario de Partial<T>. Si un objeto tiene propiedades opcionales, Required<T> las convierte en obligatorias.
+*/
+
+/* type User = {
+    name: string;
+    email?: string; // Opcional
+};
+
+// Si usamos Required<User>, la propiedad email deja de ser opcional
+let myUser: Required<User> = {
+    name: "Stalin",
+    email: "stalin@example.com", // Ahora es obligatorio
+};
+// Si usamos Required<User>, la propiedad email deja de ser opcional: */
+
+
+
+/*
+Readonly<Type>
+--------------
+Evita que un objeto sea modificado.
+
+Este tipo es útil cuando quieres que un objeto no pueda cambiar después de ser creado.
+*/
+
+/* type Car = {
+    brand: string;
+    model: string;
+};
+
+// Si usamos Readonly<Car>, no podremos modificar sus propiedades
+let myCar: Readonly<Car> = {
+    brand: "Toyota",
+    model: "Highlander",
+};
+
+myCar.model = "Corolla"; // ❌ Esto dará error porque el objeto es de solo lectura
+// Readonly<T> impide que las propiedades sean modificadas después de la creación. */
+
+
+
+/*
+Pick<Type, Keys>
+---------
+Selecciona solo algunas propiedades de un objeto.
+
+Este tipo nos permite elegir qué propiedades queremos de un objeto.
+
+• Puedes seleccionar una o mas propiedades separandolas con |.
+• Pick<Type, Keys>, te permite crear un nuevo tipo con solo las propiedades que necesitas.
+*/
+
+/* type Person = {
+    name: string;
+    age: number;
+    country: string;
+    email: string;
+    phone: number;
+};
+
+// Solo queremos la propiedad "age"
+type PersonAge = Pick<Person, "age">;
+
+let person_1: PersonAge = {
+    age: 40,
+};
+
+// Si solo queremos el name y el age, podemos hacer lo siguiente
+type PersonBasic_1 = Pick<Person, "name" | "age">;
+
+let person_2: PersonBasic = {
+    name: "Carlos",
+    age: 30,
+};
+
+// Podemos seleccionar todas las propiedades que queramos con Pick<T, K>, Simplemente las agregamos dentro de las comillas separadas por |
+type PersonBasic_2 = Pick<Person, "name" | "age" | "country" | "email">;
+
+let person_3: PersonBasic_2 = {
+    name: "Carlos",
+    age: 30,
+    country: "Ecuador",
+    email: "carlos@example.com"
+};
+
+// Pick<T, K> nos deja elegir solo ciertas propiedades de un tipo. */
+
+
+
+/*
+Omit<Type, Keys>
+-----------------
+Elimina propiedades de un objeto.
+
+Este es lo contrario de Pick<Type, Keys>. Nos permite quitar propiedades que no queremos.
+*/
+
+/* type Employee = {
+    name: string;
+    age: number;
+    salary: number;
+};
+
+// Si queremos quitar salary
+type EmployeeWithoutSalary = Omit<Employee, "salary">;
+
+let employe: EmployeeWithoutSalary = {
+    name: "Ana",
+    age: 28,
+};
+
+// Si queremos quitar salary and age
+type EmployeeWithoutSalaryAndAge = Omit<Employee, "salary" | "age">
+
+let employe_1: EmployeeWithoutSalaryAndAge = {
+    name: "Jose",
+};
+
+// Omit<Type, Keys> elimina la propiedades que no queremos usar. */
+
+
+
+/* 
+Awaited<Type>
+--------------
+Extrae el tipo de valor que devuelve una promesa.
+
+Este tipo es útil cuando estamos trabajando con Promesas en TypeScript.
+*/
+
+/* async function getUser(): Promise<string> {
+    return "Stalin";
+}
+
+// Usamos Awaited para obtener el tipo del resultado de la promesa
+type UserName = Awaited<ReturnType<typeof getUser>>;
+// UserName será de tipo "string"
+
+// Awaited<T> nos dice qué tipo de dato tiene una promesa cuando termina. */
+
+
+
+/*
+Record<Keys, Type>
+------------------
+Crea un objeto con claves y valores del tipo que queramos
+
+Este tipo nos permite crear objetos con claves de un tipo específico y valores de otro tipo.
+*/
+
+/* type Grades = Record<string, number>;
+
+let studentGrades: Grades = {
+    math: 95,
+    science: 90,
+    history: 85,
+};
+
+// Record<Keys, Type>, crea un objeto donde keys son las llaves y Type los valores. */
